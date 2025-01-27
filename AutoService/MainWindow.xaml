@@ -1,0 +1,53 @@
+﻿<Window x:Class="AutoService.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoService"
+        mc:Ignorable="d" WindowState="Maximized"
+        ResizeMode="NoResize"
+        d:DesignHeight="1080" d:DesignWidth="1920"
+        Title="Поломка" FontFamily="Tw Cen MT">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="navigation_Frame" NavigationUIVisibility="Hidden"/>
+
+        <Border
+            Width="1920" Height="75" VerticalAlignment="Top"
+            Background="#FFFF9C1A"/>
+
+        <Image Source="IMG\logout_icon.png" Margin="1800 10 0 35"
+               Width="80" Height="58"
+               VerticalAlignment="Top"/>
+        
+        <Button  x:Name="outBTN"
+            Margin="1800 10 0 35"
+               Width="80" Height="58"
+               VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Opacity="0" Click="outBTN_Click"/>
+
+        <StackPanel Orientation="Horizontal"
+            Height="100" MaxHeight="400"
+            VerticalAlignment="Top"
+            Margin="200,15,0,0">
+
+
+            <TextBlock HorizontalAlignment="Left" Margin="10 0 50 20" >
+                <Hyperlink Style="{StaticResource Hyperlinks}" Click="ClientsHyperlink_Click"> Клиенты </Hyperlink>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="10 0 50 20">
+                <Hyperlink Style="{StaticResource Hyperlinks}" Click="ServicesHyperlink_Click"> Услуги </Hyperlink>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="10 0 0 20">
+                <Hyperlink Style="{StaticResource Hyperlinks}" Click="VisitRegHyperlink_Click"> Учет посещений </Hyperlink>
+            </TextBlock>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
