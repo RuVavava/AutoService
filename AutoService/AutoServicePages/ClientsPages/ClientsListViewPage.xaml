@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:AutoService.AutoServicePages.ClientsPages"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
-      Title="" FontFamily="Tw Cen MT">
+      Title=" " FontFamily="Tw Cen MT">
 
     <Grid Background="#FFFFFFE1">
         <Grid.ColumnDefinitions>
