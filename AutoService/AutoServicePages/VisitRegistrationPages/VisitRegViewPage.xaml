@@ -1,9 +1,9 @@
-﻿<Page x:Class="AutoService.AutoServicePages.ClientsPages.ClientsListViewPage"
+﻿<Page x:Class="AutoService.AutoServicePages.VisitRegistrationPages.VisitRegViewPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AutoService.AutoServicePages.ClientsPages"
+      xmlns:local="clr-namespace:AutoService.AutoServicePages.VisitRegistrationPages"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title=" " FontFamily="Tw Cen MT">
@@ -24,10 +24,10 @@
         </Grid.RowDefinitions>
 
         <TextBox x:Name="SearchTB"
-            FontSize="35" Grid.Column="0" Grid.Row="2"   
-            Background="White"
-            Width="530" Height="65"
-            VerticalAlignment="Bottom" Margin="30, 0, 0, 20" HorizontalAlignment="Left" >
+           FontSize="35" Grid.Column="0" Grid.Row="2"   
+           Background="White"
+           Width="530" Height="65"
+           VerticalAlignment="Bottom" Margin="30, 0, 0, 20" HorizontalAlignment="Left" >
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="20" BorderBrush="Black" BorderThickness="3" Background="White">
@@ -37,12 +37,23 @@
             </TextBox.Template>
         </TextBox>
 
-        <Button x:Name="AddClientBTN" Content="Добавить нового клиента"
-                FontSize="30" FontWeight="Light"
-                Grid.Column="0" Grid.Row="3"
-                Width="400" Height="50" Margin="40" VerticalAlignment="Top"
-                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
-                >
+        <Viewbox Grid.Column="0" Grid.Row="3" Grid.RowSpan="2"
+        Width="250" Height="210"
+        VerticalAlignment="Top"
+        Margin="0 10 280 0">
+                    <Calendar Name="EventCalendar"   
+        SelectionMode="MultipleRange" FontSize="100"
+                      />
+        </Viewbox>
+
+
+
+        <Button x:Name="LargerBTN" Content="⬆"
+               FontSize="50" FontWeight="Light"
+               Grid.Column="0" Grid.Row="3"
+               Width="70" Height="70" Margin="180 60 0 0" VerticalAlignment="Top"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               >
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"/>
@@ -50,12 +61,12 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="EditCkientBTN" Content="Редактировать"
-                FontSize="30" FontWeight="Light"
-                Grid.Column="0" Grid.Row="3"
-                Width="300" Height="50" Margin="10" VerticalAlignment="Bottom"
-                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
-                >
+        <Button x:Name="LessBTN" Content="⬇"
+               FontSize="50" FontWeight="Light"
+               Grid.Column="0" Grid.Row="3"
+               Width="70" Height="70" Margin="350 60 0 0" VerticalAlignment="Top"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               >
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"/>
@@ -63,12 +74,77 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="RemoveClientBTN" Content="Удалить"
-                FontSize="30" FontWeight="Light"
-                Grid.Column="0" Grid.Row="4"
-                Width="300" Height="50" Margin="10" VerticalAlignment="Top"
-                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
-                >
+        <Button x:Name="ResetBTN" Content="Очистить ❌"
+               FontSize="30" FontWeight="Light"
+               Grid.Column="0" Grid.Row="3"
+               Width="250" Height="50" Margin="250 0 0 3" VerticalAlignment="Bottom"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" 
+               >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="AddVistBTN" Content="Добавить новую запись"
+               FontSize="30" FontWeight="Light"
+               Grid.Column="0" Grid.Row="4"
+               Width="400" Height="50" Margin="40" VerticalAlignment="Top"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" 
+               >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="EditVisitBTN" Content="Редактировать"
+               FontSize="30" FontWeight="Light"
+               Grid.Column="0" Grid.Row="4"
+               Width="300" Height="50" Margin="10" VerticalAlignment="Bottom"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="PDFBTN" Content="PDF "
+               FontSize="30" FontWeight="Light"
+               Grid.Column="0" Grid.Row="5"
+               Width="130" Height="50" Margin="0 10 300 0" VerticalAlignment="Top"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="WORDBTN" Content="WORD"
+               FontSize="30" FontWeight="Light"
+               Grid.Column="0" Grid.Row="5"
+               Width="130" Height="50" Margin="10" VerticalAlignment="Top"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="EXCELBTN" Content="EXCEL"
+               FontSize="30" FontWeight="Light"
+               Grid.Column="0" Grid.Row="5"
+               Width="130" Height="50" Margin="300 10 0 0" VerticalAlignment="Top"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               >
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"/>
@@ -77,10 +153,10 @@
         </Button>
 
         <ListView x:Name="ServicesLV" VerticalAlignment="Center"
-                  Grid.Column="1" Grid.ColumnSpan="2" 
-                  Grid.Row="1" Grid.RowSpan="5"
-                  BorderBrush="Black" BorderThickness="2"
-                  Width="1200" Height="800" d:ItemsSource="{Binding services}">
+                 Grid.Column="1" Grid.ColumnSpan="2" 
+                 Grid.Row="1" Grid.RowSpan="5"
+                 BorderBrush="Black" BorderThickness="2"
+                 Width="1200" Height="800" d:ItemsSource="{Binding services}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="0" Padding="1">
@@ -152,10 +228,10 @@
                                             </TextBlock>
 
                                             <Button x:Name="EditServiceBTN" Grid.Row="3" Content="редактировать"
-                                                    HorizontalAlignment="Left"
-                                                    Width="300" Height="45" Margin="20 0 0 0" FontSize="30"                
-                                                    BorderBrush="Black" BorderThickness="3" Background="#CC05A0FF" 
-                                                    >
+                                                   HorizontalAlignment="Left"
+                                                   Width="300" Height="45" Margin="20 0 0 0" FontSize="30"                
+                                                   BorderBrush="Black" BorderThickness="3" Background="#CC05A0FF" 
+                                                   >
                                                 <Button.Resources>
                                                     <Style TargetType="Border">
                                                         <Setter Property="CornerRadius" Value="20"/>
@@ -164,9 +240,9 @@
                                             </Button>
 
                                             <Button x:Name="DeliteServiceBTN" Grid.Row="3" Content="удалить" HorizontalAlignment="Left"
-                                                    Width="200" Height="45" Margin="350 0 0 0" FontSize="30"
-                                                    BorderBrush="Black" BorderThickness="2" Background="#CC05A0FF" 
-                                                    >
+                                                   Width="200" Height="45" Margin="350 0 0 0" FontSize="30"
+                                                   BorderBrush="Black" BorderThickness="2" Background="#CC05A0FF" 
+                                                   >
                                                 <Button.Resources>
                                                     <Style TargetType="Border">
                                                         <Setter Property="CornerRadius" Value="20"/>
@@ -175,10 +251,10 @@
                                             </Button>
 
                                             <Button x:Name="RegistrServiceBTN" Grid.Row="3" Content="запись"
-                                                    HorizontalAlignment="Right"
-                                                    Width="200" Height="45" Margin="0 0 20 0" FontSize="30"
-                                                    BorderBrush="Black" BorderThickness="2" Background="#CC05A0FF"
-                                                    >
+                                                   HorizontalAlignment="Right"
+                                                   Width="200" Height="45" Margin="0 0 20 0" FontSize="30"
+                                                   BorderBrush="Black" BorderThickness="2" Background="#CC05A0FF"
+                                                   >
                                                 <Button.Resources>
                                                     <Style TargetType="Border">
                                                         <Setter Property="CornerRadius" Value="20"/>
@@ -196,8 +272,8 @@
         </ListView>
 
         <TextBlock x:Name="CountRecordTBL" Text=""
-                   Grid.Column="2" Grid.Row="4"
-                   FontSize="35"
-                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="400, 0, 0, 0"/>
+                  Grid.Column="2" Grid.Row="4"
+                  FontSize="35"
+                  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="400, 0, 0, 0"/>
     </Grid>
 </Page>

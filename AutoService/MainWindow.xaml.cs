@@ -12,7 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoService.AutoServicePages;
 using AutoService.AutoServicePages.ClientsPages;
+using AutoService.AutoServicePages.ServicesPages;
+using AutoService.AutoServicePages.VisitRegistrationPages;
 
 namespace AutoService
 {
@@ -40,12 +43,12 @@ namespace AutoService
 
         private void ServicesHyperlink_Click(object sender, RoutedEventArgs e)
         {
-            //navigation_Frame.NavigationService.Navigate(new ClientsListViewPage());
+            navigation_Frame.NavigationService.Navigate(new ServicesListViewPage());
         }
 
         private void VisitRegHyperlink_Click(object sender, RoutedEventArgs e)
         {
-            //navigation_Frame.NavigationService.Navigate(new ClientsListViewPage());
+            navigation_Frame.NavigationService.Navigate(new VisitRegViewPage());
         }
     }
 }

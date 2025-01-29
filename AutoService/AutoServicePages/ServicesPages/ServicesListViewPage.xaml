@@ -1,9 +1,9 @@
-﻿<Page x:Class="AutoService.AutoServicePages.ClientsPages.ClientsListViewPage"
+﻿<Page x:Class="AutoService.AutoServicePages.ServicesPages.ServicesListViewPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AutoService.AutoServicePages.ClientsPages"
+      xmlns:local="clr-namespace:AutoService.AutoServicePages.ServicesPages"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title=" " FontFamily="Tw Cen MT">
@@ -37,10 +37,20 @@
             </TextBox.Template>
         </TextBox>
 
-        <Button x:Name="AddClientBTN" Content="Добавить нового клиента"
-                FontSize="30" FontWeight="Light"
+        <Slider x:Name="priceSlider"
+            Grid.Column="0" Grid.Row="3"
+            Width="350" Height="20"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Top"
+            Minimum="0" Maximum="10000" Value="0"
+            Margin="0 25 180 0"
+            IsSelectionRangeEnabled="True" IsMoveToPointEnabled="True"/>
+
+
+        <Button x:Name="LargerBTN" Content="⬆"
+                FontSize="50" FontWeight="Light"
                 Grid.Column="0" Grid.Row="3"
-                Width="400" Height="50" Margin="40" VerticalAlignment="Top"
+                Width="70" Height="70" Margin="280 3 0 0" VerticalAlignment="Top"
                 BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
                 >
             <Button.Resources>
@@ -50,9 +60,48 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="EditCkientBTN" Content="Редактировать"
+        <Button x:Name="LessBTN" Content="⬇"
+                FontSize="50" FontWeight="Light"
+                Grid.Column="0" Grid.Row="3"
+                Width="70" Height="70" Margin="450 3 0 0" VerticalAlignment="Top"
+                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" 
+                >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="ResetBTN" Content="Очистить ❌"
                 FontSize="30" FontWeight="Light"
                 Grid.Column="0" Grid.Row="3"
+                Width="250" Height="50" Margin="0 40 0 0" VerticalAlignment="Center"
+                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" 
+                >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="AddServiceBTN" Content="Добавить новую услугу"
+                FontSize="30" FontWeight="Light"
+                Grid.Column="0" Grid.Row="4"
+                Width="400" Height="50" Margin="40" VerticalAlignment="Top"
+                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" 
+                >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="EditSeviceBTN" Content="Редактировать"
+                FontSize="30" FontWeight="Light"
+                Grid.Column="0" Grid.Row="4"
                 Width="300" Height="50" Margin="10" VerticalAlignment="Bottom"
                 BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
                 >
@@ -63,9 +112,9 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="RemoveClientBTN" Content="Удалить"
+        <Button x:Name="RemoveServiceBTN" Content="Удалить"
                 FontSize="30" FontWeight="Light"
-                Grid.Column="0" Grid.Row="4"
+                Grid.Column="0" Grid.Row="5"
                 Width="300" Height="50" Margin="10" VerticalAlignment="Top"
                 BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
                 >

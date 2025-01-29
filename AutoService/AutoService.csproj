@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>service_logo.ico</ApplicationIcon>
+    <ApplicationIcon>IMG\service_logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -71,6 +71,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AutoServicePages\ServicesPages\ServicesListViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoServicePages\VisitRegistrationPages\VisitRegViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +89,12 @@
     </Compile>
     <Compile Include="AutoServicePages\ClientsPages\ClientsListViewPage.xaml.cs">
       <DependentUpon>ClientsListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoServicePages\ServicesPages\ServicesListViewPage.xaml.cs">
+      <DependentUpon>ServicesListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoServicePages\VisitRegistrationPages\VisitRegViewPage.xaml.cs">
+      <DependentUpon>VisitRegViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DB\Client.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -182,10 +196,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AutoServicePages\ServicesPages\" />
-    <Folder Include="AutoServicePages\VisitRegistrationPages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -198,7 +209,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Resource Include="IMG\logout_icon.png" />
-    <Resource Include="service_logo.ico" />
+    <Resource Include="IMG\service_logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
