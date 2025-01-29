@@ -1,5 +1,4 @@
-﻿using AutoService.AutoServiceWindowws.ClientsWindowws;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AutoService.AutoServicePages.ClientsPages
+namespace AutoService.AutoServiceWindowws.VisitRegistrationWindowws
 {
     /// <summary>
-    /// Логика взаимодействия для ClientsListViewPage.xaml
+    /// Логика взаимодействия для AddVisitRegWindoww.xaml
     /// </summary>
-    public partial class ClientsListViewPage : Page
+    public partial class AddVisitRegWindoww : Window
     {
-        public ClientsListViewPage()
+        public AddVisitRegWindoww()
         {
             InitializeComponent();
-        }
-
-        private void AddClientBTN_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

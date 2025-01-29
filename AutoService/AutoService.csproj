@@ -95,6 +95,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AutoServiceWindowws\VisitRegistrationWindowws\AddVisitRegWindoww.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -123,6 +127,9 @@
     </Compile>
     <Compile Include="AutoServiceWindowws\ServicesWindowws\EditServiceWindoww.xaml.cs">
       <DependentUpon>EditServiceWindoww.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoServiceWindowws\VisitRegistrationWindowws\AddVisitRegWindoww.xaml.cs">
+      <DependentUpon>AddVisitRegWindoww.xaml</DependentUpon>
     </Compile>
     <Compile Include="DB\Client.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -224,9 +231,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AutoServiceWindowws\VisitRegistrationWindowws\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

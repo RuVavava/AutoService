@@ -41,7 +41,7 @@
                 FontSize="30" FontWeight="Light"
                 Grid.Column="0" Grid.Row="3"
                 Width="400" Height="50" Margin="40" VerticalAlignment="Top"
-                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" Click="AddClientBTN_Click"
                 >
             <Button.Resources>
                 <Style TargetType="Border">
