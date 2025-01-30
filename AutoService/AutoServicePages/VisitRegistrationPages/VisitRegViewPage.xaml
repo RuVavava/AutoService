@@ -157,39 +157,39 @@
                  Grid.Row="1" Grid.RowSpan="5"
                  BorderBrush="Black" BorderThickness="2"
                   ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                 Width="1200" Height="800" d:ItemsSource="{d:SampleData ItemCount=15}">
+                 Width="1200" Height="800" d:ItemsSource="{Binding clientService}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="5" Padding="1">
 
                         <StackPanel>
                             <StackPanel>
-                                <StackPanel Orientation="Horizontal"  Height="150">
+                                <StackPanel Orientation="Horizontal"  Height="120">
                                     <StackPanel Orientation="Vertical" Width="1150">
 
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="50"/>
-                                                <RowDefinition Height="50"/>
-                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="25"/>
+                                                <RowDefinition Height="25"/>
                                             </Grid.RowDefinitions>
 
 
-                                            <TextBlock Grid.Row="0" Text="{Binding Service.Title}" TextWrapping="Wrap" FontSize="35" Width="1100" Height="50" Margin="20, 0"/>
+                                            <TextBlock Grid.Row="0" Text="{Binding Service.Title}" TextWrapping="Wrap" FontSize="35" Width="1100" Height="50" Margin="20, 5"/>
 
                                             <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="20, 0, 0, 0" Width="1100">
-                                                <TextBlock Text="{Binding Client.FirstName}" TextWrapping="Wrap" FontSize="30" Height="50" Margin="0, 0, 10, 0"/>
-                                                <TextBlock  Text="{Binding Client.LastName}" TextWrapping="Wrap" FontSize="30" Height="50" Margin="0, 0, 10, 0" />
-                                                <TextBlock FontSize="30" Text="{Binding Client.Patronymic}" Height="50" TextWrapping="Wrap" Margin="0, 0, 10, 0"/>
+                                                <TextBlock Text="{Binding Client.FirstName}" TextWrapping="Wrap" FontSize="20" Height="30" Margin="0, 0, 10, 0"/>
+                                                <TextBlock  Text="{Binding Client.LastName}" TextWrapping="Wrap" FontSize="20" Height="30" Margin="0, 0, 10, 0" />
+                                                <TextBlock Text="{Binding Client.Patronymic}" Height="30" FontSize="20" TextWrapping="Wrap" Margin="0, 0, 10, 0"/>
                                             </StackPanel>
 
-                                            <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="20, 0, 0, 0" Width="1100">
-                                                <TextBlock Text="{Binding Client.Email}" TextWrapping="Wrap" FontSize="30" Height="50" Margin="0, 0, 10, 0"/>
-                                                <TextBlock  Text="{Binding Client.Phone}" TextWrapping="Wrap" FontSize="30" Height="50" Margin="0, 0, 10, 0" />
+                                            <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="20, 0, 0, 0" Width="1100" VerticalAlignment="Top">
+                                                <TextBlock Text="{Binding Client.Email}" TextWrapping="Wrap" FontSize="20" Height="30" Margin="0, 0, 10, 0" />
+                                                <TextBlock  Text="{Binding Client.Phone}" TextWrapping="Wrap" FontSize="20" Height="30" Margin="0, 0, 10, 0" />
                                             </StackPanel>
 
-                                            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="20, 0" HorizontalAlignment="Right"  Width="200">
-                                                <TextBlock Text="{Binding StartTime, StringFormat = dd.MM.yyyy HH:mm}" TextWrapping="Wrap" FontSize="30" Height="50" Margin="0, 0, 10, 0"/>
+                                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.RowSpan="2" Margin="20, 0" HorizontalAlignment="Right"  Width="250">
+                                                <TextBlock Text="{Binding StartTime, StringFormat = dd.MM.yyyy HH:mm}" TextWrapping="Wrap" FontSize="30" Height="60" Margin="0, 0, 10, 0"/>
                                             </StackPanel>
 
                                         </Grid>

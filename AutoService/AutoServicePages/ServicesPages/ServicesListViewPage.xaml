@@ -129,7 +129,7 @@
                   Grid.Column="1" Grid.ColumnSpan="2" 
                   Grid.Row="1" Grid.RowSpan="5"
                   BorderBrush="Black" BorderThickness="2"
-                  Width="1250" Height="800" d:ItemsSource="{d:SampleData ItemCount=9}">
+                  Width="1250" Height="800" d:ItemsSource="{Binding services}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="2"/>
@@ -163,10 +163,10 @@
                                             </Grid.RowDefinitions>
 
 
-                                            <TextBlock Grid.Row="0" Text="{Binding Title}" TextWrapping="Wrap" FontSize="35" Width="450" Height="100" Margin="0, 0, 60, 0"/>
+                                            <TextBlock Grid.Row="0" Text="{Binding Title}" TextWrapping="Wrap" FontSize="35" Width="450" Height="75" Margin="0, 0, 60, 0"/>
 
                                             <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="20, 0, 0, 0" Width="850">
-                                                <TextBlock Text="{Binding Cost}" TextWrapping="Wrap" FontSize="30" Height="50"  TextDecorations="Strikethrough">
+                                                <TextBlock Text="{Binding CostFormat}" TextWrapping="Wrap" FontSize="30" Height="50"  TextDecorations="Strikethrough">
                                                     <TextBlock.Style>
                                                         <Style TargetType="TextBlock">
                                                             <Style.Triggers>

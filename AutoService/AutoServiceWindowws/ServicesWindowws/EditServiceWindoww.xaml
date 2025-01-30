@@ -53,7 +53,7 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
-                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput="NumericOnly"/>
+                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>
@@ -64,7 +64,7 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
-                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput="NumericOnly"/>
+                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>
@@ -75,7 +75,7 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
-                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput="NumericOnly"/>
+                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>

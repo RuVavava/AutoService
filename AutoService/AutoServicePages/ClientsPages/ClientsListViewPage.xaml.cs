@@ -1,4 +1,5 @@
 ﻿using AutoService.AutoServiceWindowws.ClientsWindowws;
+using AutoService.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,13 @@ namespace AutoService.AutoServicePages.ClientsPages
     /// </summary>
     public partial class ClientsListViewPage : Page
     {
+        public static List<Client> clients { get; set; }
         public ClientsListViewPage()
         {
             InitializeComponent();
+            clients = new List<Client>(DBConnection.AutoServiceEntities.Client.ToList());
+            ClientsLV.ItemsSource = clients;
+            this.DataContext = this;
         }
 
         private void AddClientBTN_Click(object sender, RoutedEventArgs e)

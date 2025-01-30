@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoService.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace AutoService.AutoServicePages.ServicesPages
     /// </summary>
     public partial class ServicesListViewPage : Page
     {
+        public static List<Service> services { get; set; }
         public ServicesListViewPage()
         {
             InitializeComponent();
+            services = new List<Service>(DBConnection.AutoServiceEntities.Service.ToList());
+            ServicesLV.ItemsSource = services;
+            this.DataContext = this;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoService.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace AutoService.AutoServicePages.VisitRegistrationPages
     /// </summary>
     public partial class VisitRegViewPage : Page
     {
+        public static List<ClientService> clientServices {  get; set; }
         public VisitRegViewPage()
         {
             InitializeComponent();
+            clientServices = new List<ClientService>(DBConnection.AutoServiceEntities.ClientService.ToList());
+            NearestSCLV.ItemsSource = clientServices;
+            this.DataContext = this;
         }
     }
 }

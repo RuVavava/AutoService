@@ -76,11 +76,11 @@
             </Button.Resources>
         </Button>
 
-        <ListView x:Name="ServicesLV" VerticalAlignment="Center"
+        <ListView x:Name="ClientsLV" VerticalAlignment="Center"
                   Grid.Column="1" Grid.ColumnSpan="2" 
                   Grid.Row="1" Grid.RowSpan="5"
                   BorderBrush="Black" BorderThickness="2"
-                  Width="1200" Height="800" d:ItemsSource="{d:SampleData ItemCount=5}">
+                  Width="1220" Height="800" d:ItemsSource="{Binding clients}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="4"/>
@@ -89,24 +89,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="0" Padding="1">
-                        <Border.Style>
-                            <Style TargetType="Border">
-                                <Setter Property="Background" Value="Beige"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Discount}" Value="0">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-
-
                         <StackPanel>
                             <StackPanel>
-                                <StackPanel Orientation="Vertical" Height="450">
+                                <StackPanel Orientation="Vertical" Height="400">
 
                                     <StackPanel Orientation="Horizontal" Width="250" Margin="15 5">
-                                        <Image Source="{Binding MainImagePath}" Width="250" Height="250">
+                                        <Image Source="{Binding PhotoPath}" Width="250" Height="250">
                                             <Image.Clip>
                                                 <RectangleGeometry RadiusX="130" RadiusY="130" Rect="0,0,250,250"/>
                                             </Image.Clip>
@@ -117,21 +105,21 @@
 
                                         <Grid>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="40"/>
-                                                <RowDefinition Height="40"/>
-                                                <RowDefinition Height="40"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
                                                 <RowDefinition Height="50"/>
                                             </Grid.RowDefinitions>
 
-                                            <TextBlock Grid.Row="0" Text="{Binding FirstName}" TextWrapping="Wrap" FontSize="35" Width="250" Height="100"/>
-                                            <TextBlock Grid.Row="1" Text="{Binding LastName}" TextWrapping="Wrap" FontSize="35" Width="250" Height="100"/>
-                                            <TextBlock Grid.Row="2" Text="{Binding Patronymic}" TextWrapping="Wrap" FontSize="35" Width="250" Height="100"/>
+                                            <TextBlock Grid.Row="0" Text="{Binding FirstName}" TextWrapping="Wrap" FontSize="25" Width="250" Height="40"/>
+                                            <TextBlock Grid.Row="1" Text="{Binding LastName}" TextWrapping="Wrap" FontSize="25" Width="250" Height="40"/>
+                                            <TextBlock Grid.Row="2" Text="{Binding Patronymic}" TextWrapping="Wrap" FontSize="25" Width="250" Height="40"/>
                                             
                                             
-                                            <TextBlock Grid.Row="3" Text="{Binding Phone}" TextWrapping="Wrap" FontSize="35" Width="250" Height="100"/>
+                                            <TextBlock Grid.Row="3" Text="{Binding Phone}" TextWrapping="Wrap" FontSize="25" Width="250" Height="40"/>
 
 
-                                            <Button x:Name="InfoClientBTN" Grid.Row="3" Content="i"
+                                            <Button x:Name="InfoClientBTN" Grid.Row="2" Grid.RowSpan="2" Content="i" VerticalAlignment="Center"
                                                     HorizontalAlignment="Right"
                                                     Width="45" Height="45" Margin="20 0 0 0" FontSize="30"                
                                                     BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" 
@@ -142,7 +130,6 @@
                                                     </Style>
                                                 </Button.Resources>
                                             </Button>
-
                                         </Grid>
                                     </StackPanel>
                                 </StackPanel>

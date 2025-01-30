@@ -41,7 +41,7 @@
         <ComboBox x:Name="ClientsCB" ItemsSource="{Binding clients}"
                   Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                   VerticalAlignment="Top" HorizontalAlignment="Left"
-                  Width="350" Height="55" Margin="10 5" SelectionChanged="ClientsCB_SelectionChanged">
+                  Width="350" Height="55" Margin="10 5">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
