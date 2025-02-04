@@ -23,7 +23,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="SearchTB"
+        <TextBox x:Name="SearchTB" TextChanged="PART_ContentHost_TextChanged"
             FontSize="35" Grid.Column="0" Grid.Row="2"   
             Background="White"
             Width="530" Height="65"
@@ -31,7 +31,7 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="20" BorderBrush="Black" BorderThickness="3" Background="White">
-                        <ScrollViewer Margin="10" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <ScrollViewer Margin="10" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>
@@ -54,7 +54,7 @@
                 FontSize="30" FontWeight="Light"
                 Grid.Column="0" Grid.Row="3"
                 Width="300" Height="50" Margin="10" VerticalAlignment="Bottom"
-                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" Click="EditCkientBTN_Click"
                 >
             <Button.Resources>
                 <Style TargetType="Border">
@@ -67,7 +67,7 @@
                 FontSize="30" FontWeight="Light"
                 Grid.Column="0" Grid.Row="4"
                 Width="300" Height="50" Margin="10" VerticalAlignment="Top"
-                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+                BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" Click="RemoveClientBTN_Click"
                 >
             <Button.Resources>
                 <Style TargetType="Border">
@@ -80,7 +80,7 @@
                   Grid.Column="1" Grid.ColumnSpan="2" 
                   Grid.Row="1" Grid.RowSpan="5"
                   BorderBrush="Black" BorderThickness="2"
-                  Width="1220" Height="800" d:ItemsSource="{Binding clients}">
+                  Width="1220" Height="820" d:ItemsSource="{Binding clients}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="4"/>
@@ -123,6 +123,7 @@
                                                     HorizontalAlignment="Right"
                                                     Width="45" Height="45" Margin="20 0 0 0" FontSize="30"                
                                                     BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" 
+                                                    Click="InfoClientBTN_Click"
                                                     >
                                                 <Button.Resources>
                                                     <Style TargetType="Border">
@@ -141,8 +142,8 @@
         </ListView>
 
         <TextBlock x:Name="CountRecordTBL" Text=""
-                   Grid.Column="2" Grid.Row="4"
+                   Grid.Column="2" Grid.Row="5"
                    FontSize="35"
-                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="400, 0, 0, 0"/>
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="750, 0, 0, 20"/>
     </Grid>
 </Page>

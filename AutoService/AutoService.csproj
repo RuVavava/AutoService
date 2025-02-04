@@ -87,6 +87,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AutoServiceWindowws\ClientsWindowws\InfoClientWindoww.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AutoServiceWindowws\ServicesWindowws\AddServiceWindoww.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +125,9 @@
     </Compile>
     <Compile Include="AutoServiceWindowws\ClientsWindowws\EditClientWindoww.xaml.cs">
       <DependentUpon>EditClientWindoww.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoServiceWindowws\ClientsWindowws\InfoClientWindoww.xaml.cs">
+      <DependentUpon>InfoClientWindoww.xaml</DependentUpon>
     </Compile>
     <Compile Include="AutoServiceWindowws\ServicesWindowws\AddServiceWindoww.xaml.cs">
       <DependentUpon>AddServiceWindoww.xaml</DependentUpon>
