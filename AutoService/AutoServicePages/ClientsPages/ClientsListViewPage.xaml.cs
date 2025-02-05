@@ -68,6 +68,8 @@ namespace AutoService.AutoServicePages.ClientsPages
             addNewClientWindoww.ShowDialog();
             Refresh(0);
             RefreshLV();
+
+            CleaningtheFilter();
         }
 
         private void EditCkientBTN_Click(object sender, RoutedEventArgs e)
@@ -75,14 +77,45 @@ namespace AutoService.AutoServicePages.ClientsPages
             if (ClientsLV.SelectedItem is Client client)
             {
                 ClientsLV.SelectedItem = null;
-                EditClientWindoww editClientWindow = new EditClientWindoww();
+                EditClientWindoww editClientWindow = new EditClientWindoww(client);
                 editClientWindow.ShowDialog();
             }
+
+            Refresh(0);
+            RefreshLV();
+
+            CleaningtheFilter();
         }
 
         private void RemoveClientBTN_Click(object sender, RoutedEventArgs e)
         {
+            if (ClientsLV.SelectedItem is Client client)
+            {
+                var hasClientServiceRecords = DBConnection.AutoServiceEntities.ClientService.Any(x => x.ClientID == client.ID);
 
+                    if (hasClientServiceRecords)
+                    {
+                        MessageBox.Show("Удаление невозможно!\nНа данный клиент существует записях.",
+                            "ОШИБКА", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBoxResult result = MessageBox.Show($"Вы действительно хотите удалить клиента {client.FirstName} {client.LastName} {client.Patronymic}?",
+                            "", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
+
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            DBConnection.AutoServiceEntities.Client.Remove(client);
+                            DBConnection.AutoServiceEntities.SaveChanges();
+                        }
+                    }
+                }
+
+            Refresh(0);
+            RefreshLV();
+
+            CleaningtheFilter();
         }
 
         private void InfoClientBTN_Click(object sender, RoutedEventArgs e)
@@ -97,6 +130,13 @@ namespace AutoService.AutoServicePages.ClientsPages
                 Refresh(0);
             }
             RefreshLV();
+
+            CleaningtheFilter();
+        }
+
+        private void CleaningtheFilter()
+        {
+            SearchTB.Text = "";
         }
     }
 }

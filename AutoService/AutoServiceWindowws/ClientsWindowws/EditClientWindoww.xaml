@@ -21,12 +21,12 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="РЕДАКТИРОВАНИЕ ИНФОРМАЦИИ О КЛИЕНТЕ" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Width="700" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" FontSize="30"/>
-        <Image x:Name="MainMG" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="3" Height="300" VerticalAlignment="Top"
+        <Image x:Name="Photo" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="3" Height="300" VerticalAlignment="Top"
                Source="{Binding PhotoPath}" Stretch="Uniform"/>
 
         <Button Content="Изменить фотографию" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Name="EditPhotoPathIMGBTN"                 
                 HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,7" Width="160"         
-                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26">
+                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26" Click="EditPhotoPathIMGBTN_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -39,7 +39,7 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
-                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput='TextOnly'/>
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>
@@ -49,7 +49,7 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
-                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput='TextOnly'/>
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>
@@ -59,27 +59,39 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
+                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput='TextOnly'/>
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+
+        <TextBlock Text="Дата рождения клиента:" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40 10 0 0"/>
+        <Border CornerRadius="5" Background="White" BorderThickness="1" BorderBrush="Black" Margin="190 0 0 0" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="165" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <DatePicker x:Name="DateBHTB" BorderBrush="#FFFFFFE1" BorderThickness="0" Height="25"/>
+        </Border>
+        
+
+
+        <TextBlock Text="Дата регистрации:" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40 80 0 0"/>
+        <TextBox  x:Name="DateRegTB"  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="95" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="150 80 0 0" TextWrapping="Wrap"  IsReadOnly="True">
+            <TextBox.Template>
+                <ControlTemplate>
+                    <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
                         <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
 
-        <TextBlock Text="Дата рождения клиента:" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40 5"/>
-
-        <TextBlock Text="Дата регистрации:" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40 80 0 0"/>
-        <TextBlock Text="" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40 100 0 0"/>
-
-        <Viewbox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"
-        Width="150" Height="125"
-        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100 0 0 0">
-            <Calendar Name="EventCalendar"   
-        SelectionMode="MultipleRange" FontSize="100"
-                      />
-        </Viewbox>
-
         <TextBlock Text="Пол:" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40 27"/>
-        <ComboBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="95" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70 25"/>
+        <ComboBox x:Name="GenderCB" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="95" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70 25"         
+                  ItemsSource="{Binding genders}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
         <TextBlock Text="Почта Email:" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 00"/>
         <TextBox  x:Name="EmailTB" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Width="340" Height="25" HorizontalAlignment="Left" Margin="10 10 0 80" TextWrapping="Wrap" >
@@ -97,7 +109,7 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
-                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                        <ScrollViewer Margin="2" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput='NumericOnly'/>
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>
@@ -105,7 +117,7 @@
 
 
         <Button Content="Подтвердить" Grid.Row="3" Grid.Column="3" Name="OKBTN" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10, 7" Width="120"          
-                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26">
+                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26" Click="OKBTN_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -114,7 +126,7 @@
         </Button>
 
         <Button Content="Отмена" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Name="CancelBTN" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20,0,0,7" Width="80"          
-                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26">
+                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26" Click="CancelBTN_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>

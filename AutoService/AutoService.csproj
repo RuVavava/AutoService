@@ -250,6 +250,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Клиенты\sult.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Клиенты\1.jpg" />

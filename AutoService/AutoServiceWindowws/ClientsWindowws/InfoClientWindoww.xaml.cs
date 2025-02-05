@@ -46,7 +46,7 @@ namespace AutoService.AutoServiceWindowws.ClientsWindowws
 
         private void OKBTN_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }

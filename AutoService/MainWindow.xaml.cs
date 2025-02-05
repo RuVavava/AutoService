@@ -33,7 +33,13 @@ namespace AutoService
 
         private void outBTN_Click(object sender, RoutedEventArgs e) //Выход из программы
         {
-            Application.Current.Shutdown();
+            var result = MessageBox.Show("Вы действительно хотите выйти?", "", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+
         }
 
         private void ClientsHyperlink_Click(object sender, RoutedEventArgs e)
