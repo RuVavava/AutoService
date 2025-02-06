@@ -99,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AutoServiceWindowws\ServicesWindowws\InfoServiceWindoww.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AutoServiceWindowws\VisitRegistrationWindowws\AddVisitRegWindoww.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +138,9 @@
     </Compile>
     <Compile Include="AutoServiceWindowws\ServicesWindowws\EditServiceWindoww.xaml.cs">
       <DependentUpon>EditServiceWindoww.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoServiceWindowws\ServicesWindowws\InfoServiceWindoww.xaml.cs">
+      <DependentUpon>InfoServiceWindoww.xaml</DependentUpon>
     </Compile>
     <Compile Include="AutoServiceWindowws\VisitRegistrationWindowws\AddVisitRegWindoww.xaml.cs">
       <DependentUpon>AddVisitRegWindoww.xaml</DependentUpon>
@@ -250,6 +257,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Услуги\з.jpg" />
     <Resource Include="Клиенты\sult.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -356,5 +364,6 @@
     <Resource Include="IMG\logout_icon.png" />
     <Resource Include="IMG\service_logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
