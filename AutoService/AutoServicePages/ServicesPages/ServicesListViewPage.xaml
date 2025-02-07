@@ -31,7 +31,8 @@
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="20" BorderBrush="Black" BorderThickness="3" Background="White">
-                        <ScrollViewer Margin="10" BorderBrush="White" x:Name="PART_ContentHost" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <ScrollViewer Margin="10" BorderBrush="White" x:Name="PART_ContentHost" 
+                                      VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>

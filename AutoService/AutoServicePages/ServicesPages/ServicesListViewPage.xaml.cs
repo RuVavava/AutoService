@@ -91,26 +91,19 @@ namespace AutoService.AutoServicePages.ServicesPages
 
         private void CleaningtheFilter()
         {
-            // Сброс кнопок фильтрации
             LessBTN.Background = new SolidColorBrush(Color.FromRgb(255, 156, 26));
             LargerBTN.Background = new SolidColorBrush(Color.FromRgb(255, 156, 26));
             LessBTN.IsEnabled = true;
             LargerBTN.IsEnabled = true;
 
-            // Очистка поля поиска
             SearchTB.Text = "";
 
-            // Сброс слайдера
             priceSlider.Value = 50000;
-
-            // Обновление текста для слайдера
             priceslvalue.Text = $"{Math.Round(priceSlider.Value, 2)} рублей";
 
-            // Получение всех услуг
             var allService = DBConnection.AutoServiceEntities.Service.ToList();
             var filtered = allService.AsQueryable();
 
-            // Устанавливаем все элементы в ListView без фильтрации
             ServicesLV.ItemsSource = filtered.ToList();
             CountRecordTBL.Text = $"{filtered.Count()} из {allService.Count}";
         }

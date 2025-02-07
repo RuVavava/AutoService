@@ -8,6 +8,7 @@ namespace AutoService.DB
 {
     internal class DBConnection
     {
-        public static AutoService2025Entities AutoServiceEntities = new AutoService2025Entities();
+        public static AutoService2025Entities AutoServiceEntities 
+            = new AutoService2025Entities();
     }
 }

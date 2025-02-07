@@ -116,7 +116,7 @@ namespace AutoService.AutoServiceWindowws.ClientsWindowws
 
                 if (availabilityMainIMG == false)
                 {
-                    MessageBox.Show("Добавьте главную фотографию услуги!", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Добавьте фотографию профиля!", "", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 

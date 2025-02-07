@@ -44,7 +44,8 @@ namespace AutoService.AutoServicePages.ClientsPages
 
             if (!string.IsNullOrWhiteSpace(searchText))
             {
-                filtered = filtered.Where(x => x.FirstName.ToLower().Contains(searchText) || x.LastName.ToLower().Contains(searchText) || x.Patronymic.ToLower().Contains(searchText));
+                filtered = filtered.Where(x => x.FirstName.ToLower().Contains(searchText) ||
+                x.LastName.ToLower().Contains(searchText) || x.Patronymic.ToLower().Contains(searchText));
             }
 
             ClientsLV.ItemsSource = filtered.ToList();

@@ -15,8 +15,8 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="75"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -24,7 +24,7 @@
 
         <TextBlock Text="Клиент:" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10"/>
 
-        <TextBox  x:Name="SearchClientTB"        
+        <TextBox  x:Name="SearchClientTB"    TextChanged="SearchClientTB_TextChanged"    
                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                   VerticalAlignment="Center" HorizontalAlignment="Left"
                   Width="300" Height="25" Margin="60 0 0 0"
@@ -45,9 +45,9 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding FirstName_Client}"/>
-                        <TextBlock Text="{Binding LastName_Client}"/>
-                        <TextBlock Text="{Binding Patronymic_Client}"/>
+                        <TextBlock Text="{Binding FirstName}"/>
+                        <TextBlock Text="{Binding LastName}"/>
+                        <TextBlock Text="{Binding Patronymic}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
@@ -55,7 +55,7 @@
 
         <TextBlock Text="Услуга:" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Width="300" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0"/>
 
-        <TextBox  x:Name="SearchServiceTB"        
+        <TextBox  x:Name="SearchServiceTB"     TextChanged="SearchServiceTB_TextChanged"   
                   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                   VerticalAlignment="Center" HorizontalAlignment="Left"
                   Width="300" Height="25" Margin="60 0 0 0"
@@ -70,14 +70,14 @@
         </TextBox>
 
 
-        <ComboBox x:Name="ServiceCB" ItemsSource="{Binding service}"
+        <ComboBox x:Name="ServiceCB" ItemsSource="{Binding services}"
                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                   VerticalAlignment="Center" HorizontalAlignment="Left"
                   Width="350" Height="25" Margin="10 0">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Name_Service}"/>
+                        <TextBlock Text="{Binding Title}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
@@ -85,7 +85,7 @@
 
 
         <TextBlock Text="Комментарий:" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Width="300" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,4,0,0"/>
-        <TextBox  x:Name="CommentTB" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Width="300" Height="55" HorizontalAlignment="Left" Margin="10,0,0,160">
+        <TextBox  x:Name="CommentTB" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Width="300" Height="55" HorizontalAlignment="Left" Margin="10,0,0,110">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="White">
@@ -98,12 +98,12 @@
         <DatePicker x:Name="DateClientServiceDP"
                   Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
                   VerticalAlignment="Center" HorizontalAlignment="Left"
-                  Width="200" Height="25" Margin="10, 0, 0, 40"/>
+                  Width="200" Height="25" Margin="10, 0, 0, 0"/>
 
-        <TextBox  x:Name="TimeClientServiceTB"        
+        <TextBox  x:Name="TimeClientServiceTB"     PreviewTextInput="TimeTbx_PreviewTextInput"    TextChanged="TimeTbx_TextChanged"
                   Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                   VerticalAlignment="Center" HorizontalAlignment="Left"
-                  Width="70" Height="25" Margin="40, 0, 0, 40"
+                  Width="70" Height="25" Margin="40, 0, 0, 0"
                   >
             <TextBox.Template>
                 <ControlTemplate>
@@ -115,7 +115,7 @@
         </TextBox>
 
         <Button Content="Подтвердить" Grid.Row="6" Grid.Column="1" Name="OKBTN" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,11" Width="120"          
-                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26">
+                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26" Click="OKBTN_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -124,7 +124,7 @@
         </Button>
 
         <Button Content="Отмена" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Name="CancelBTN" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20,0,0,11" Width="80"          
-                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26">
+                BorderBrush="Black" BorderThickness="1" Background="#FFFF9C1A" Height="26" Click="CancelBTN_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
