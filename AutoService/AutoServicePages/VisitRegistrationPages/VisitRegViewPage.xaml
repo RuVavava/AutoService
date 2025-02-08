@@ -117,7 +117,7 @@
                FontSize="30" FontWeight="Light"
                Grid.Column="0" Grid.Row="5"
                Width="130" Height="50" Margin="0 10 300 0" VerticalAlignment="Top"
-               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" Click="PDFBTN_Click"
                >
             <Button.Resources>
                 <Style TargetType="Border">
@@ -130,7 +130,7 @@
                FontSize="30" FontWeight="Light"
                Grid.Column="0" Grid.Row="5"
                Width="130" Height="50" Margin="10" VerticalAlignment="Top"
-               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" Click="WORDBTN_Click"
                >
             <Button.Resources>
                 <Style TargetType="Border">
@@ -143,7 +143,7 @@
                FontSize="30" FontWeight="Light"
                Grid.Column="0" Grid.Row="5"
                Width="130" Height="50" Margin="300 10 0 0" VerticalAlignment="Top"
-               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A"
+               BorderBrush="Black" BorderThickness="3" Background="#FFFF9C1A" Click="EXCELBTN_Click"
                >
             <Button.Resources>
                 <Style TargetType="Border">

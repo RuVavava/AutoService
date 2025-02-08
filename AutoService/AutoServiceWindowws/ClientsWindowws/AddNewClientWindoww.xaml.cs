@@ -94,7 +94,8 @@ namespace AutoService.AutoServiceWindowws.ClientsWindowws
                     string.IsNullOrWhiteSpace(LastNameTB.Text) ||
                     string.IsNullOrWhiteSpace(PatronymicTB.Text) ||
                     string.IsNullOrWhiteSpace(EmailTB.Text) ||
-                    string.IsNullOrWhiteSpace(PhoneTB.Text))
+                    string.IsNullOrWhiteSpace(PhoneTB.Text) ||
+                    string.IsNullOrWhiteSpace(GenderCB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
                     MessageBox.Show(error.ToString());

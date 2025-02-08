@@ -104,7 +104,7 @@ namespace AutoService.AutoServiceWindowws.ClientsWindowws
             {
                 StringBuilder error = new StringBuilder();
                 Client client = contextClient;
-                if (string.IsNullOrWhiteSpace(FirstNameTB.Text) || LastNameTB.Text.Trim() == "" || PatronymicTB.Text.Trim() == "" || EmailTB.Text.Trim() == "" || PhoneTB.Text.Trim() == "")
+                if (string.IsNullOrWhiteSpace(FirstNameTB.Text) || LastNameTB.Text.Trim() == "" || PatronymicTB.Text.Trim() == "" || EmailTB.Text.Trim() == "" || PhoneTB.Text.Trim() == "" || string.IsNullOrWhiteSpace(GenderCB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
                     return;

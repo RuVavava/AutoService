@@ -111,7 +111,8 @@ namespace AutoService.AutoServiceWindowws.VisitRegistrationWindowws
             {
                 StringBuilder error = new StringBuilder();
 
-                if (ClientsCB.SelectedIndex == -1 || DateClientServiceDP.SelectedDate == null || TimeClientServiceTB.Text.Trim() == "")
+                if (ClientsCB.SelectedIndex == -1 || DateClientServiceDP.SelectedDate == null || TimeClientServiceTB.Text.Trim() == "" ||
+                    string.IsNullOrWhiteSpace(ClientsCB.Text) || string.IsNullOrWhiteSpace(ServiceCB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
                 }
@@ -133,6 +134,17 @@ namespace AutoService.AutoServiceWindowws.VisitRegistrationWindowws
                     error.AppendLine("Введите корректное время в формате Час:Минута!");
                 }
 
+                if (error.Length == 0)
+                {
+                    DateTime selectedDate = (DateTime)DateClientServiceDP.SelectedDate;
+                    DateTime selectedTime = new DateTime(selectedDate.Year, selectedDate.Month, selectedDate.Day, hour, minute, 0);
+
+                    // Проверка, не выбрано ли прошедшее время
+                    if (selectedTime < DateTime.Now)
+                    {
+                        error.AppendLine("Вы не можете выбрать прошедшее время!");
+                    }
+                }
 
                 if (error.Length > 0)
                 {
@@ -145,15 +157,12 @@ namespace AutoService.AutoServiceWindowws.VisitRegistrationWindowws
                     var selectedClient = ClientsCB.SelectedItem as Client;
                     var selectedService = ServiceCB.SelectedItem as Service;
 
-
                     var result = MessageBox.Show($"Проверьте верность введенных данных:\nНаименование услуги: {selectedService.Title}" +
-                        $"Дата:, {selectedDate.Day}.{selectedDate.Month}.{selectedDate.Year}, Время: {hour}:{minute}, " +
+                        $"Дата: {selectedDate.Day}.{selectedDate.Month}.{selectedDate.Year}, Время: {hour}:{minute}, " +
                         $"\nКлиент: {selectedClient.LastName} {selectedClient.FirstName} {selectedClient.Patronymic}", "", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
-
 
                     if (result == MessageBoxResult.Yes)
                     {
-
                         ClientService clientService = new ClientService();
 
                         clientService.ClientID = selectedClient.ID;
@@ -166,7 +175,6 @@ namespace AutoService.AutoServiceWindowws.VisitRegistrationWindowws
 
                         this.Close();
                     }
-
                 }
             }
             catch
@@ -175,12 +183,13 @@ namespace AutoService.AutoServiceWindowws.VisitRegistrationWindowws
 
                 if (result == MessageBoxResult.OK)
                 {
-                    //ПЕРЕЗАПУСК ПРОГРАММЫ
+                    // ПЕРЕЗАПУСК ПРОГРАММЫ
                     string exePath = Process.GetCurrentProcess().MainModule.FileName;
                     Process.Start(exePath);
                     Application.Current.Shutdown();
                 }
             }
         }
+
     }
 }

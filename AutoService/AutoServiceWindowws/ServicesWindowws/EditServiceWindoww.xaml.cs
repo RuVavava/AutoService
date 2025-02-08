@@ -32,7 +32,7 @@ namespace AutoService.AutoServiceWindowws.ServicesWindowws
 
             MainMG.Source = new BitmapImage(new Uri(services.MainImagePath, UriKind.Relative));
             NameServiceTB.Text = contextservice.Title;
-            CostServiceTB.Text = contextservice.Cost.ToString();
+            CostServiceTB.Text = ((int)contextservice.Cost).ToString();
             TimeServiceTB.Text = (contextservice.DurationInMin).ToString();
             SaleServiceTB.Text = contextservice.Discount.ToString();
             DegrServiceTB.Text += contextservice.Description;
@@ -123,7 +123,7 @@ namespace AutoService.AutoServiceWindowws.ServicesWindowws
                     return;
                 }
                 var result = MessageBox.Show($"Проверьте верность введенных данных:\nНаименование: {NameServiceTB.Text}, \nСтоимость: {CostServiceTB.Text}, " +
-                    $"Скидка:, {SaleServiceTB.Text}, \nДлительность: {TimeServiceTB.Text} минут, \nОписание: {DegrServiceTB.Text}", "",
+                    $"Скидка:, {SaleServiceTB.Text}, \nДлительность: {TimeServiceTB.Text} минут, \nОписание: {DegrServiceTB.Text} {MainMG.Source}", "",
                     MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
 
 
@@ -134,6 +134,11 @@ namespace AutoService.AutoServiceWindowws.ServicesWindowws
                     service.Cost = int.Parse(CostServiceTB.Text);
                     service.Discount = int.Parse(SaleServiceTB.Text);
                     service.DurationInMin = int.Parse(TimeServiceTB.Text);
+                    if(MainMG.Source == null)
+                    {
+                        service.MainImagePath = " ";
+                    }
+
                     DBConnection.AutoServiceEntities.SaveChanges();
 
                     NameServiceTB.Text = String.Empty;
@@ -149,7 +154,7 @@ namespace AutoService.AutoServiceWindowws.ServicesWindowws
             }
             catch
             {
-                MessageBoxResult result = MessageBox.Show("Произошла ошибка!\nНеобходимо перезагрузить программу!", "ОШИБКА", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxResult result = MessageBox.Show($"Произошла ошибка!\nНеобходимо перезагрузить программу!", "ОШИБКА", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 if (result == MessageBoxResult.OK)
                 {
